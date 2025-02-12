@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f3f4f6;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 0;
+        }
+        .form-container {
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 450px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            width: 100%; /* Makes buttons responsive */
+            max-width: 400px; /* Prevents them from getting too wide */
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .password-requirements {
+            font-size: 12px;
+            color: #555;
+            text-align: left;
+            margin-top: 5px;
+        }
+        .password-requirements span {
+            display: block;
+            margin: 3px 0;
+        }
+        .valid { color: green; }
+        .invalid { color: red; }
+        .password-strength {
+            height: 5px;
+            width: 100%;
+            background: #ddd;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+        .strength-bar {
+            height: 5px;
+            width: 0;
+            transition: width 0.3s;
+            border-radius: 5px;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
+        }
+        .success-message {
+            display: none;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: medium;
+            font-style: bold;
+        }
+        .already-user {
+            display: none;
+            padding: 15px;
+            background-color: #571524;
+            color: #ffffff;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: medium;
+            font-style: bold;
+        }
+        .go-home-btn {
+            width: 100%; /* Makes buttons responsive */
+            max-width: 400px; /* Prevents them from getting too wide */
+            padding: 10px;
+            margin-top: 15px;
+            background-color: rgb(19, 145, 122);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        .go-home-btn:hover {
+            background-color: rgb(54, 102, 94);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>User Registration</h2>
+    <div class="success-message" id="successMessage">User registered successfully! Redirecting to Home Page...</div>
+    <div class="already-user" id="alreadyexists">User Already Exists! Redirecting to Home Page...</div>
+
+    <form id="registerForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <div class="error-message" id="usernameError">Username must be at least 3 characters</div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error-message" id="emailError">Enter a valid email address</div>
+
+        <label for="phone_number">Phone Number</label>
+        <input type="text" id="phone_number" name="phone_number" pattern="[0-9]{10}" required placeholder="Enter 10-digit phone number">
+        <div class="error-message" id="phoneError">Enter a valid 10-digit phone number</div>
+
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        
+        <div class="password-requirements">
+            <strong>Password must include:</strong>
+            <span id="length" class="invalid">✅ At least 8 characters</span>
+            <span id="uppercase" class="invalid">✅ One uppercase letter</span>
+            <span id="lowercase" class="invalid">✅ One lowercase letter</span>
+            <span id="number" class="invalid">✅ One number</span>
+            <span id="special" class="invalid">✅ One special character (@$!%*?&)</span>
+        </div>
+
+        <div class="password-strength">
+            <div class="strength-bar" id="strengthBar"></div>
+        </div>
+        <div class="error-message" id="passwordError">Password does not meet the requirements</div>
+
+        <input type="submit" value="Register">
+    </form>
+        <!-- Go to Home Page Button -->
+        <button class="go-home-btn" onclick="window.location.href='/index.html'">Go to Home Page</button>
+</div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", async function(event) {
+        window.scrollTo(0, 0); // Take User to Top of the Page
+        event.preventDefault();
+
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone_number = document.getElementById("phone_number").value.trim();
+        const address = document.getElementById("address").value.trim();
+        const password = document.getElementById("password").value.trim();
+
+        // Validation
+        let valid = true;
+
+        if (username.length < 3) {
+            document.getElementById("usernameError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("usernameError").style.display = "none";
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(email)) {
+            document.getElementById("emailError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("emailError").style.display = "none";
+        }
+
+        if (!/^\d{10}$/.test(phone_number)) {
+            document.getElementById("phoneError").style.display = "block";
+            valid = false;
+        } else {
+            document.getElementById("phoneError").style.display = "none";
+        }
+
+        if (!valid) return;
+
+        const backendUrl = "http://localhost:5000/api/users/register";
+
+        const response = await fetch(backendUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name: username, email, phone_number, address, password })
+        });
+
+        const data = await response.json();
+
+        if (data.redirect) {
+            if(data.message==="User registered successfully!"){
+                document.getElementById("alreadyexists").style.display = "none";
+                document.getElementById("successMessage").style.display = "block";
+                setTimeout(() => { window.location.href = "/index.html"; 
+            }, 2000);
+            }else{
+                document.getElementById("successMessage").style.display = "none";
+                document.getElementById("alreadyexists").style.display = "block";
+                setTimeout(() => { window.location.href = "/index.html";
+            }, 2000);
+            }
+        }
+
+    });
+
+    document.getElementById("password").addEventListener("input", function() {
+        const password = this.value;
+        const strengthBar = document.getElementById("strengthBar");
+
+        const conditions = [
+            { regex: /.{8,}/, element: "length" },
+            { regex: /[A-Z]/, element: "uppercase" },
+            { regex: /[a-z]/, element: "lowercase" },
+            { regex: /\d/, element: "number" },
+            { regex: /[@$!%*?&]/, element: "special" }
+        ];
+
+        let strength = 0;
+        conditions.forEach(cond => {
+            const element = document.getElementById(cond.element);
+            if (password.match(cond.regex)) {
+                element.classList.add("valid");
+                element.classList.remove("invalid");
+                strength++;
+            } else {
+                element.classList.add("invalid");
+                element.classList.remove("valid");
+            }
+        });
+
+        const colors = ["red", "orange", "yellow", "green"];
+        strengthBar.style.width = (strength * 20) + "%";
+        strengthBar.style.backgroundColor = colors[strength - 1] || "red";
+    });
+</script>
+
+</body>
+</html>

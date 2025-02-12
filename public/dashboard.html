@@ -1,0 +1,230 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Escape and Explore</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#"><img src="/images/logo.jpg" alt="logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+                <li><a href="/tour-packages.html">Tour-Packages</a></li>
+                <li><a href="/bookings.html">Bookings</a></li>
+
+                <li id="authLink"><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <img src="/images/BG_img.jpg" alt="Hero image">
+            </div>
+        </section>   
+
+        <div class="text-slider">
+            <span class="sliding-text">ESCAPE</span><br>
+            <span class="sliding-text">AND</span><br>
+            <span class="sliding-text">EXPLORE</span>
+        </div>
+
+        
+        <section class="search-section" id="destinations">
+            <input type="text" id="searchBox" placeholder="Search for a state..." />
+            <div id="stateList" class="state-list">
+                
+            </div>
+        </section>
+
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>
+              Welcome to <strong>ESCAPE AND EXPLORE</strong>, your gateway to unforgettable travel experiences! We are passionate about connecting travelers with the world's most breathtaking destinations and unique cultural encounters.
+            </p>
+            <p>
+              Our mission is to inspire, guide, and make your journeys seamless. From hidden gems to iconic landmarks, we strive to provide detailed insights, expert tips, and personalized recommendations to help you explore the beauty of our planet.
+            </p>
+            <p>
+              Whether you're a seasoned traveler or planning your first adventure, we are here to ensure your trips are filled with memories that last a lifetime. Let us take you on a journey to discover the world, one destination at a time.
+            </p>
+            <p>
+              <em>Happy travels,<br>The ESCAPE AND EXPLORE Team</em>
+            </p>
+          </section>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-contact" id="contact-us">
+            <h3>Contact Us</h3>
+            <p>Have Questions Or Feedback?</p>
+            <p>Contact Us Below!</p>
+            <form action="/submit-form" method="POST" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authLink = document.getElementById("authLink");
+
+            
+            if (!localStorage.getItem("loggedInUser")) {
+                window.location.href = "/login.html"; 
+            } else {
+                
+                authLink.innerHTML = '<a href="#" id="logoutBtn">Logout</a>';
+                document.getElementById("logoutBtn").addEventListener("click", function () {
+                    localStorage.removeItem("loggedInUser"); 
+                    window.location.href = "/index.html";
+                });
+            }
+        });
+    </script>
+    
+
+<script src="/js/script.js"></script>
+<script src="/js/stateData.js"></script>
+
+</body>
+</html>
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Escape and Explore</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#"><img src="/images/logo.jpg" alt="logo"></a>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about-us">About us</a></li>
+                <li><a href="#contact-us">Contact us</a></li>
+                <li><a href="/tour-packages.html">Tour-Packages</a></li>
+                <li><a href="/bookings.html">Bookings</a></li>
+
+                <li id="authLink"><a href="#">Logout</a></li> <!-- Default Logout -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">
+                <img src="/images/BG_img.jpg" alt="Hero image">
+            </div>
+        </section>   
+
+        <div class="text-slider">
+            <span class="sliding-text">ESCAPE</span><br>
+            <span class="sliding-text">AND</span><br>
+            <span class="sliding-text">EXPLORE</span>
+        </div>
+
+        <!-- Search Box Section -->
+        <section class="search-section" id="destinations">
+            <input type="text" id="searchBox" placeholder="Search for a state..." />
+            <div id="stateList" class="state-list">
+                <!-- State names with images will be dynamically added here -->
+            </div>
+        </section>
+
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>
+              Welcome to <strong>ESCAPE AND EXPLORE</strong>, your gateway to unforgettable travel experiences! We are passionate about connecting travelers with the world's most breathtaking destinations and unique cultural encounters.
+            </p>
+            <p>
+              Our mission is to inspire, guide, and make your journeys seamless. From hidden gems to iconic landmarks, we strive to provide detailed insights, expert tips, and personalized recommendations to help you explore the beauty of our planet.
+            </p>
+            <p>
+              Whether you're a seasoned traveler or planning your first adventure, we are here to ensure your trips are filled with memories that last a lifetime. Let us take you on a journey to discover the world, one destination at a time.
+            </p>
+            <p>
+              <em>Happy travels,<br>The ESCAPE AND EXPLORE Team</em>
+            </p>
+          </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-contact" id="contact-us">
+            <h3>Contact Us</h3>
+            <p>Have Questions Or Feedback?</p>
+            <p>Contact Us Below!</p>
+            <form action="/submit-form" method="POST" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+         <!-- Add the Terms & Conditions link here -->
+    <div class="footer-links">
+        <p>&copy; 2025 Escape and Explore. All Rights Reserved.</p>
+        <a href="/terms.html">Terms & Conditions</a>
+        |
+        <a href="/privacy.html">Privacy Policy</a>
+    </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const authLink = document.getElementById("authLink");
+
+            // Check if user is logged in
+            if (!localStorage.getItem("loggedInUser")) {
+                window.location.href = "/login.html"; // Redirect if not logged in
+            } else {
+                // Set Logout functionality
+                authLink.innerHTML = '<a href="#" id="logoutBtn">Logout</a>';
+                document.getElementById("logoutBtn").addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    localStorage.removeItem("loggedInUser"); // Remove user session
+                    alert("Logged out successfully!"); // Show logout success message
+                    window.location.href = "/index.html"; // Redirect to homepage
+                });
+            }
+        });
+    </script>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/stateData.js"></script>
+
+</body>
+</html>
+

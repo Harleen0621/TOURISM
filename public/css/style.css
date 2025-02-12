@@ -1,0 +1,449 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family: "Dongle-light";
+    src:url("/Dongle/Dongle-Light.ttf");
+}
+@font-face{
+    font-family: "Dongle-regular";
+    src:url("/Dongle/Dongle-Regular.ttf");
+}
+@font-face{
+    font-family: "Dongle-bold";
+    src:url("/Dongle/Dongle-Bold.ttf");
+}
+
+header{
+    display: flex;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    align-items: center;
+
+}
+.logo img{
+    max-width: 15%;
+}
+.nav-menu ul{
+    display: flex;
+}
+.nav-menu li{
+    list-style: none;
+    margin-right: 20px;
+}
+.nav-menu li:last-child{
+    margin-right: 0;
+}
+.nav-menu a{
+    text-decoration: none;
+    font-family: "Dongle-bold";
+    font-size: 1.8rem;
+    color:#333;
+    transition: all ease 0.3s;
+    white-space: nowrap;
+}
+.nav-menu a:hover{
+    color: #ff7f50;
+}
+
+.hero-image img {
+    position:relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url('/images/BG_img.jpg'); /*Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    /* display: flex; */
+  }
+  
+  .text-slider {
+    position: absolute;
+    bottom: 10%; /* Adjust as needed */
+    width: 100%;
+    overflow: hidden;
+  }
+  
+.sliding-text {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+    font-size: 90px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    animation: slideFromLeftAndStop 1.5s ease-out forwards;
+    margin-left: 20px;
+  }
+
+@keyframes slideFromLeftAndStop {
+    0% {
+        transform: translateX(-100%); /* Start off-screen on the left */
+    }
+    50% {
+        transform: translateX(0); /* Reach the middle of the screen */
+    }
+    100% {
+        transform: translateX(0); /* Stay in the middle */
+    }
+}
+/* General Styling */
+body {
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Subtle background color */
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    margin: 30px auto;
+}
+
+#searchBox {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.state-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+}
+.state-link {
+    text-decoration:underline;
+    color: black;
+}
+
+/* State Item Styling */
+.state-item {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    text-align: center; 
+    padding: 20px 20px;
+    border-radius: 15px;
+    width: 80%; /* Responsive width */
+    max-width: 700px; /* Limit maximum size */
+    text-align: left;
+    height: 250px; /* Increased height for each state div */
+    opacity: 0;
+    transform: translateX(0);
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Spacing between text and image */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Initial shadow */
+    perspective: 1000px; /* Add depth */
+    cursor: pointer; /* Indicate interactivity */
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+/* Specific Hover Colors for Different States */
+.state-item[data-state="Madhya Pradesh"]:hover {
+    background-color: #f0da97; /* Yellow for Madhya Pradesh */
+    font-style: italic;
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
+    box-shadow: 0 10px 20px rgba(211, 211, 14, 0.3); /* Deepen shadow on hover */
+}
+
+.state-item[data-state="Rajasthan"]:hover {
+    background-color: #ed97f0; /* Yellow for Madhya Pradesh */
+    font-style: italic;
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
+    box-shadow: 0 10px 20px rgba(191, 14, 211, 0.3); /* Deepen shadow on hover */
+}
+
+.state-item[data-state="Kerala"]:hover {
+    background-color: #c2f097; /* Yellow for Madhya Pradesh */
+    font-style: italic;
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
+    box-shadow: 0 10px 20px rgba(14, 211, 47, 0.3); /* Deepen shadow on hover */
+}
+
+
+.state-item[data-state="Jammu & Kashmir"]:hover {
+    background-color: #f09a97; /* Yellow for Madhya Pradesh */
+    font-style: italic;
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
+    box-shadow: 0 10px 20px rgba(211, 14, 14, 0.3); /* Deepen shadow on hover */
+}
+
+.state-item[data-state="West Bengal"]:hover {
+    background-color: #f2a791; /* Yellow for Madhya Pradesh */
+    font-style: italic;
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
+    box-shadow: 0 10px 20px rgba(211, 112, 14, 0.3); /* Deepen shadow on hover */
+}
+
+/* Image Styling */
+.state-item img {
+    width: 50%; /* Image takes up less space */
+    max-width: 500px; /* Limit image size */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Shadow for image */
+    margin-left: 100px;
+}
+
+/* State Name Styling */
+.state-item span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333; /* Darker color for readability */
+    flex: 1; /* Allow text to grow and occupy space */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.state-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .state-item {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        text-align: center;
+    }
+
+    .state-item img {
+        width: 70%; /* Larger image for smaller screens */
+    }
+
+    .state-item span {
+        font-size: 20px;
+    }
+}
+
+/* Different starting points for animation */
+.state-item.odd {
+    transform: translateX(-1%); /* Start far left */
+}
+
+.state-item.even {
+    transform: translateX(1%); /* Start far right */
+}
+
+/* Final positions after animation */
+.state-item.visible.odd {
+    transform: translateX(-50%); /* Final position on the left */
+    opacity: 1;
+}
+
+.state-item.visible.even {
+    transform: translateX(50%); /* Final position on the right */
+    opacity: 1;
+}
+
+/* About Us Section */
+#about-us {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 190px;
+  }
+  
+  #about-us h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-decoration: underline;
+  }
+  
+  #about-us p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 15px 0;
+    line-height: 1.6;
+  }
+  
+  #about-us strong {
+    color: #000;
+  }
+  
+  #about-us em {
+    color: #666;
+    font-style: italic;
+  }
+ 
+  footer {
+    background-color: #493628;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    clear: both; /* Ensure the footer doesn't overlap with previous sections */
+}
+
+.footer-contact {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+ .footer-contact h3 {
+        font-size: 30px;
+        text-decoration: underline;
+        padding-bottom: 20px;
+        color:#FCE7C8;
+
+    }
+
+.footer-contact p {
+        font-size: 20px;
+        /* color:#E78F81; */
+
+    }
+
+.contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;  
+    }
+
+footer label {
+        font-size: 1rem;
+        color: white;
+        margin-bottom: 5px;
+      }
+
+.contact-form input, .contact-form textarea {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        border:2px solid black;
+    }
+
+.contact-form textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+.submit-btn {
+        background-color:#CD5C08;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        border:2px solid black;
+    }
+
+.submit-btn:hover {
+        background-color:#a25117;
+    }
+
+
+/* Ribbon Layer */
+.ribbon-layer.even {
+    position: absolute;
+    overflow: auto;
+    white-space: nowrap;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #f2efef, #ec9584da,#f2efef); /* Background color */
+    transform: translateX(-100%);
+    z-index: -1; /* makes the ribbon behind */
+    transition: width 0.3s ease, transform 0.3s ease;/*transforming*/
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-layer.odd {
+    position: absolute;
+    overflow: auto;
+    white-space: nowrap;
+    top: 0;
+    right: 100%;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #f2efef, #6cfffd,#f2efef); /* Background color */
+    transform: translateX(100%);
+    z-index: -1; /* makes the ribbon behind */
+    transition: width 0.3s ease, transform 0.3s ease;/*transforming*/
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;
+    direction: inherit;
+}
+
+/* Styling the container box */
+#imageContainer {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping to the next line */
+    overflow-x: auto; /* Enables horizontal scrolling if content overflows */
+    border: 2px solid #000000; /* Box border */
+    padding: 10px;
+    gap: 15px; /* Space between images */
+    background-color: #f8f8f8; /* Light background */
+    white-space: nowrap;
+    width: 100%; /* Adjust as needed */
+    margin: auto;
+}
+
+/* Individual image item */
+.image-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    float: left;
+    padding-top: 15px;
+}
+
+/* Image styling */
+.image-item img {
+    width: 250px; /* Adjust size as needed */
+    height: auto;
+    padding: 12px 12px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
+    border: 3px solid transparent;    
+}
+
+.image-item img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+    border: 3px solid #560404; /* Light blue border */
+}
+
+
+
+/* Image name styling */
+.image-item span {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    color: #333;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+/* Hover Effect for Text: Color Change, Lift & Size Increase */
+.image-item:hover span {
+    color: #560404;
+    font-size: 24px; /* Slightly bigger text */
+    animation: 0.6s ease-in-out infinite alternate;
+}
