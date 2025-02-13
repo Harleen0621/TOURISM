@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,13 +33,134 @@
             <br>
             <input type="submit" value="Confirm Booking">
         </form>
-        <button onclick="window.location.href='tour-packages.html'">Go Back</button>
+        <button onclick="window.location.href='dashboard.html'">Go Back</button>
     </section>
 
     <footer>
         <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn'); // Use sessionStorage if you prefer session-based storage
+      
+        if (!isLoggedIn) {
+          // User is not logged in, redirect to the index.html or login page
+          alert("You must log in first to access the booking page.");
+          window.location.href = "index.html"; // Redirect to the login or home page
+        }
+      </script>
+      
+
     <script src="/Escape-and-explore/script.js"></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="/css/bookings.css">
+</head>
+<body>
+    <header>
+        <h1>Confirm Your Booking</h1>
+        <nav>
+            <a href="/dashboard.html">Dashboard</a> | 
+            <a href="/tour-packages.html">Tour Packages</a> |
+            <a href="/bookings.html">Book Now</a>
+        </nav>
+    </header>
+    
+    <section id="booking-form">
+        <h2>Booking Form</h2>
+        <form id="form" onsubmit="submitBooking(event)">
+            <div id="booking-container">
+                <div class="booking-entry">
+                    <h3>Place 1</h3>
+                    <label for="package-1">Package Selected:</label>
+                    <input type="text" id="package-1" name="package[]" required>
+                    <br>
+                    <label for="amount-1">Amount:</label>
+                    <input type="text" id="amount-1" name="amount[]" required>
+                    <br>
+                </div>
+            </div>
+            <button type="button" onclick="addBooking()">Add Another Place</button>
+            <br><br>
+            <input type="submit" value="Confirm Booking">
+        </form>
+        <button onclick="window.location.href='dashboard.html'">Go Back</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
+    </footer>
+
+    <!-- <script>
+        // Check if user is logged in
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+            alert("You must log in first to access the booking page.");
+            window.location.href = "index.html";
+        }
+
+        // Function to add another booking entry
+        let placeCount = 1;
+        function addBooking() {
+            placeCount++;
+            const container = document.getElementById('booking-container');
+            const newBooking = document.createElement('div');
+            newBooking.classList.add('booking-entry');
+            newBooking.innerHTML = `
+                <h3>Place ${placeCount}</h3>
+                <label for="name-${placeCount}">Your Name:</label>
+                <input type="text" id="name-${placeCount}" name="name[]" required>
+                <br>
+                <label for="email-${placeCount}">Your Email:</label>
+                <input type="email" id="email-${placeCount}" name="email[]" required>
+                <br>
+                <label for="package-${placeCount}">Package Selected:</label>
+                <input type="text" id="package-${placeCount}" name="package[]" required>
+                <br>
+                <label for="amount-${placeCount}">Amount:</label>
+                <input type="text" id="amount-${placeCount}" name="amount[]" required>
+                <br>
+            `;
+            container.appendChild(newBooking);
+        }
+
+        // Function to submit the form data
+        function submitBooking(event) {
+            event.preventDefault(); // Prevent form submission
+            const formData = new FormData(document.getElementById('form'));
+            const bookingDetails = [];
+
+            // Collect all booking data
+            for (let i = 0; i < placeCount; i++) {
+                const name = formData.getAll('name[]')[i];
+                const email = formData.getAll('email[]')[i];
+                const packageSelected = formData.getAll('package[]')[i];
+                const amount = formData.getAll('amount[]')[i];
+
+                bookingDetails.push({ name, email, package: packageSelected, amount });
+            }
+
+            console.log("Booking Details:", bookingDetails);
+            alert("Your booking(s) have been confirmed!");
+            window.location.href = "dashboard.html"; // Redirect after booking confirmation
+
+
+
+            // After a successful login
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = "dashboard.html"; // Redirect to dashboard
+
+        }
+    </script> -->
+
+</body>
 </html>
+
