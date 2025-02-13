@@ -69,8 +69,7 @@
         <h1>Confirm Your Booking</h1>
         <nav>
             <a href="/dashboard.html">Dashboard</a> | 
-            <a href="/tour-packages.html">Tour Packages</a> |
-            <a href="/bookings.html">Book Now</a>
+            <a href="/tour-packages.html">Tour Packages</a> 
         </nav>
     </header>
     
@@ -98,6 +97,14 @@
     <footer>
         <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function submitBooking(event) {
+    event.preventDefault();
+    alert("Booking Confirmed! Proceed to Payment.");
+    window.location.href = 'payment.html';
+}
+    </script>
 
     <!-- <script>
         // Check if user is logged in

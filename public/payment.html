@@ -1,0 +1,325 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/css/payment.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+#payment-form {
+    width: 50%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="month"], input[type="submit"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment</h1>
+        <nav>
+            <a href="/dashboard.html">Dashboard</a> |
+            <a href="/tour-packages.html">Tour Packages</a>
+        </nav>
+    </header>
+
+    <section id="payment-form">
+        <h2>Complete Your Payment</h2>
+        <form id="form" onsubmit="processPayment(event)">
+            <label for="card-name">Name on Card:</label>
+            <input type="text" id="card-name" name="card-name" required>
+            <br>
+            
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number" required>
+            <br>
+            
+            <label for="expiry">Expiry Date:</label>
+            <input type="month" id="expiry" name="expiry" required>
+            <br>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+            <br>
+            
+            <input type="submit" value="Pay Now">
+        </form>
+        <button onclick="window.location.href='booking.html'">Go Back</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function processPayment(event) {
+            event.preventDefault();
+            alert("Payment Successful! Your booking is confirmed.");
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/css/payment.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#payment-form {
+    width: 40%;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+}
+
+select, input[type="text"], input[type="month"], input[type="submit"] {
+    width: 90%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button {
+    width: 90%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment</h1>
+        <nav>
+            <a href="/dashboard.html">Dashboard</a> 
+            <!-- <a href="/tour-packages.html">Tour Packages</a> -->
+        </nav>
+    </header>
+
+    <section id="payment-form">
+        <h2>Complete Your Payment</h2>
+        <form id="form" onsubmit="processPayment(event)">
+            <label for="payment-method">Select Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="debit-card">Debit Card</option>
+                <option value="gpay">Google Pay</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            <br>
+            
+            <div id="card-details">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card-name">
+                <br>
+                
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number">
+                <br>
+                
+                <label for="expiry">Expiry Date:</label>
+                <input type="month" id="expiry" name="expiry">
+                <br>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv">
+                <br>
+            </div>
+            
+            <input type="submit" value="Pay Now">
+        </form>
+        <button onclick="window.location.href='bookings.html'">Go Back</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function processPayment(event) {
+            event.preventDefault();
+            alert("Payment Successful! Your booking is confirmed.");
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
+
