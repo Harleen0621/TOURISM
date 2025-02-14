@@ -6,106 +6,132 @@
     <title>State Information</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        .state-map {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 20px;
-            display: block;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .description {
-            background: #ff7e5f;
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-        .description:hover {
-            transform: scale(1.05);
-        }
-        .scrollable-cities {
-            margin-top: 30px;
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            padding-bottom: 15px;
-        }
-        .city-card {
-            flex: 0 0 250px;
-            padding: 15px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .city-card:hover {
-            transform: translateY(-10px);
-        }
-        .city-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .view-itinerary {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background: #ff7e5f;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .view-itinerary:hover {
-            background: #e96a4c;
-        }
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #003366, #ff7e5f);
+    color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #f8f9fa;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.state-map {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    background: linear-gradient(135deg, #854836, #854836);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 1.1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.description:hover {
+    transform: scale(1.05);
+}
+
+.scrollable-cities {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.city-card {
+    flex: 0 0 260px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.city-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.city-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.view-itinerary {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #003366, #0099cc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease-in-out;
+}
+
+.view-itinerary:hover {
+    background: linear-gradient(135deg, #002244, #0077aa);
+}
+
+.back-home-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-home {
+    padding: 14px 24px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #ff7e5f, #e63946);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.back-home:hover {
+    background: linear-gradient(135deg, #e63946, #d62828);
+    transform: scale(1.05);
+}
+
     </style>
 </head>
 <body>
-    <header>
-        <header>
-            <div class="logo">
-                <a href="#"><img src="/images/logo.jpg" alt="logo"></a>
-            </div>
-                <nav class="nav-menu">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#destinations">Destinations</a></li>
-                        <li><a href="#about-us">About us</a></li>
-                        <li><a href="#contact-us">Contact us</a></li>
-                        <li><a href="/register.html">Register</a></li>
-                        <!-- <li><a href="/login.html">Login</a></li> -->
-                        <li id="authLink"><a href="/login.html">Login</a></li>
-                        <!-- <li><a href="/login.html" id="loginLogoutLink">Login</a></li> -->
-                    </ul>
-                </nav>
-        </header>
-    </header>
+   
     <div class="container">
         <h1 id="state-name"></h1>
         <img id="state-map" class="state-map" src="" alt="State Map">
@@ -131,6 +157,11 @@ body {
           <p id="itinerary-description"></p>
         </div>
       </div>
+
+      <div class="back-home-container">
+        <button class="back-home" onclick="goHome()">🏠 Back to Home</button>
+    </div>
+    
       
       <style>
         .modal {
@@ -156,7 +187,36 @@ body {
           font-size: 24px;
           cursor: pointer;
         }
+
+
+        .back-home-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.back-home {
+    padding: 12px 20px;
+    font-size: 18px;
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.back-home:hover {
+    background: #e96a4c;
+}
+
       </style>
+
+<script>
+    function goHome() {
+        window.location.href = "/"; // Redirects to home page
+    }
+</script>
+
       
 
     <script src="/js/stateData.js"></script>
