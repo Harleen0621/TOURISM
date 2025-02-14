@@ -1,19 +1,37 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
     background-color: #f4f4f4;
+    margin: 0;
 }
 
-header {
+.header-container {
+    background-color: #854836;
+    color: white;
+    padding: 20px;
     text-align: center;
-    margin-bottom: 30px;
+    font-size: 24px;
+    margin-bottom: 30px; /* Adds space below the navbar */
+  
+}
+
+header nav a{
+    text-decoration: underline;
+    font-size:medium;
+}
+header nav a:hover{
+    color:rgb(52,52,92);
+}
+
+nav {
+    margin-top: 10px;
+    padding-bottom: 10px;
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
-    color: #3498db;
+    color: white;
+    font-weight: bold;
 }
 
 #booking-form {
@@ -21,9 +39,18 @@ nav a {
     padding: 20px;
     border: 1px solid #ddd;
     margin-top: 20px;
-    width: 300px;
+    width: 400px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    border:solid black 1px;
+   
+
+}
+
+#booking-form h2{
+    text-decoration: underline;
 }
 
 #booking-form input {
@@ -35,29 +62,41 @@ nav a {
 }
 
 #booking-form input[type="submit"] {
-    background-color: #3498db;
+    background-color: #a0513c;
     color: white;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 #booking-form input[type="submit"]:hover {
-    background-color: #2980b9;
+    background-color: #854836;
 }
 
 button {
     background-color: #e74c3c;
     color: white;
-    padding: 8px 12px;
+    padding: 10px 15px;
     cursor: pointer;
     border: none;
     margin-top: 15px;
+    border-radius: 4px;
 }
 
 button:hover {
     background-color: #c0392b;
 }
 
-footer {
+.footer-container {
+    background-color: #2c3e50;
+    color: white;
     text-align: center;
+    padding: 15px;
     margin-top: 50px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
 }

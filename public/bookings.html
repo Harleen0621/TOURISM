@@ -1,61 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Form</title>
-    <link rel="stylesheet" href="/css/bookings.css">
-</head>
-<body>
-    <header>
-        <h1>Confirm Your Booking</h1>
-        <nav>
-            <a href="/dashboard.html">Dashboard</a> | 
-            <a href="/tour-packages.html">Tour Packages</a> |
-            <a href="/bookings.html">Book Now</a>
-        </nav>
-    </header>
-    
-    <section id="booking-form">
-        <h2>Booking Form</h2>
-        <form id="form" onsubmit="submitBooking(event)">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="package">Package Selected:</label>
-            <input type="text" id="package" name="package" readonly>
-            <br>
-            <label for="amount">Amount:</label>
-            <input type="text" id="amount" name="amount" readonly>
-            <br>
-            <input type="submit" value="Confirm Booking">
-        </form>
-        <button onclick="window.location.href='dashboard.html'">Go Back</button>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Check if user is logged in
-        const isLoggedIn = localStorage.getItem('isLoggedIn'); // Use sessionStorage if you prefer session-based storage
-      
-        if (!isLoggedIn) {
-          // User is not logged in, redirect to the index.html or login page
-          alert("You must log in first to access the booking page.");
-          window.location.href = "index.html"; // Redirect to the login or home page
-        }
-      </script>
-      
-
-    <script src="/Escape-and-explore/script.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,15 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>Confirm Your Booking</h1>
-        <nav>
-            <a href="/dashboard.html">Dashboard</a> | 
-            <a href="/tour-packages.html">Tour Packages</a> 
-        </nav>
+        <div class="header-container">
+            <h1>Bookings</h1>
+            <nav>
+                <a href="/dashboard.html">Go To Dashboard</a>|
+                <a href="/tour-packages.html">Tour-Packages</a>
+                
+            </nav>
+        </div>
     </header>
     
     <section id="booking-form">
-        <h2>Booking Form</h2>
+        <h2>BOOKING FORM</h2>
         <form id="form" onsubmit="submitBooking(event)">
             <div id="booking-container">
                 <div class="booking-entry">
@@ -93,81 +38,91 @@
         </form>
         <button onclick="window.location.href='dashboard.html'">Go Back</button>
     </section>
-
+    
     <footer>
-        <p>&copy; 2025 Tourism Website. All Rights Reserved.</p>
+        <div class="footer-container">
+            <p>&copy; 2025 Escape & Explore. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
     </footer>
-
+    
     <script>
         function submitBooking(event) {
-    event.preventDefault();
-    alert("Booking Confirmed! Proceed to Payment.");
-    window.location.href = 'payment.html';
-}
-    </script>
-
-    <!-- <script>
-        // Check if user is logged in
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        if (!isLoggedIn) {
-            alert("You must log in first to access the booking page.");
-            window.location.href = "index.html";
+            event.preventDefault();
+            alert("Booking Confirmed! Proceed to Payment.");
+            window.location.href = 'payment.html';
         }
-
-        // Function to add another booking entry
-        let placeCount = 1;
         function addBooking() {
-            placeCount++;
-            const container = document.getElementById('booking-container');
-            const newBooking = document.createElement('div');
-            newBooking.classList.add('booking-entry');
-            newBooking.innerHTML = `
-                <h3>Place ${placeCount}</h3>
-                <label for="name-${placeCount}">Your Name:</label>
-                <input type="text" id="name-${placeCount}" name="name[]" required>
-                <br>
-                <label for="email-${placeCount}">Your Email:</label>
-                <input type="email" id="email-${placeCount}" name="email[]" required>
-                <br>
-                <label for="package-${placeCount}">Package Selected:</label>
-                <input type="text" id="package-${placeCount}" name="package[]" required>
-                <br>
-                <label for="amount-${placeCount}">Amount:</label>
-                <input type="text" id="amount-${placeCount}" name="amount[]" required>
-                <br>
-            `;
-            container.appendChild(newBooking);
+        const bookingContainer = document.getElementById("booking-container");
+
+        // Count the number of existing places to generate unique IDs
+        const placeCount = document.querySelectorAll(".booking-entry").length + 1;
+
+        // Create a new booking entry
+        const newEntry = document.createElement("div");
+        newEntry.classList.add("booking-entry");
+
+        newEntry.innerHTML = `
+            <h3>Place ${placeCount}</h3>
+            <label for="state-${placeCount}">Select State:</label>
+            <select id="state-${placeCount}" name="state[]" onchange="updatePlaces(${placeCount})">
+                <option value="">Select a State</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+                <option value="West Bengal">West Bengal</option>
+            </select>
+            <br>
+            <label for="place-${placeCount}">Select Place:</label>
+            <select id="place-${placeCount}" name="place[]" disabled>
+                <option value="">Select a Place</option>
+            </select>
+            <br>
+            <label for="package-${placeCount}">Package Selected:</label>
+            <input type="text" id="package-${placeCount}" name="package[]" required>
+            <br>
+            <label for="amount-${placeCount}">Amount:</label>
+            <input type="text" id="amount-${placeCount}" name="amount[]" required>
+            <br>
+        `;
+
+        // Append the new entry to the booking container
+        bookingContainer.appendChild(newEntry);
+    }
+
+    function updatePlaces(count) {
+        const stateDropdown = document.getElementById(`state-${count}`);
+        const placeDropdown = document.getElementById(`place-${count}`);
+        placeDropdown.innerHTML = ""; // Clear previous options
+
+        const placesByState = {
+            "Madhya Pradesh": ["Gwalior Fort", "Iskcon Ujjain Temple", "Khajuraho Temple", "Sanchi Stupa", "Sun Temple"],
+            "Rajasthan": ["Hawa Mahal", "Jaisalmer Fort", "Mehrangarh", "Mount-Abu", "Udaipur City Palace"],
+            "Kerala": ["Alleppey Backwaters", "Athirappilly Waterfall", "Kochi", "Lighthouse Beach", "Munnar Tea Gardens"],
+            "Jammu & Kashmir": ["Amarnath Temple", "Bahu Fort", "Dal Lake", "Gurez Valley", "Patnitop"],
+            "West Bengal": ["Botanical Garden", "Darjeeling Toy Train", "Howrah Bridge", "Sundarbans National Park", "Victoria Memorial"]
+        };
+
+        const selectedState = stateDropdown.value;
+
+        if (selectedState && placesByState[selectedState]) {
+            placeDropdown.disabled = false; // Enable dropdown
+            placesByState[selectedState].forEach(place => {
+                let option = document.createElement("option");
+                option.value = place;
+                option.textContent = place;
+                placeDropdown.appendChild(option);
+            });
+        } else {
+            placeDropdown.disabled = true; // Disable if no state selected
         }
-
-        // Function to submit the form data
-        function submitBooking(event) {
-            event.preventDefault(); // Prevent form submission
-            const formData = new FormData(document.getElementById('form'));
-            const bookingDetails = [];
-
-            // Collect all booking data
-            for (let i = 0; i < placeCount; i++) {
-                const name = formData.getAll('name[]')[i];
-                const email = formData.getAll('email[]')[i];
-                const packageSelected = formData.getAll('package[]')[i];
-                const amount = formData.getAll('amount[]')[i];
-
-                bookingDetails.push({ name, email, package: packageSelected, amount });
-            }
-
-            console.log("Booking Details:", bookingDetails);
-            alert("Your booking(s) have been confirmed!");
-            window.location.href = "dashboard.html"; // Redirect after booking confirmation
-
-
-
-            // After a successful login
-            localStorage.setItem('isLoggedIn', 'true');
-            window.location.href = "dashboard.html"; // Redirect to dashboard
-
-        }
-    </script> -->
-
+    }
+    </script>
+    <script src="/Escape-and-explore/script.js"></script>
 </body>
 </html>
-
