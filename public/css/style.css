@@ -1,4 +1,4 @@
-*{
+ *{
     margin: 0;
     padding: 0;
 }
@@ -53,16 +53,16 @@ header{
     position:relative;
     width: 100%;
     height: 80vh;
-    background-image: url('/images/BG_img.jpg'); /*Replace with your image path */
+    background-image: url('/images/BG_img.jpg'); 
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    /* display: flex; */
+   
   }
   
   .text-slider {
     position: absolute;
-    bottom: 10%; /* Adjust as needed */
+    bottom: 10%; 
     width: 100%;
     overflow: hidden;
   }
@@ -81,24 +81,24 @@ header{
 
 @keyframes slideFromLeftAndStop {
     0% {
-        transform: translateX(-100%); /* Start off-screen on the left */
+        transform: translateX(-100%); 
     }
     50% {
-        transform: translateX(0); /* Reach the middle of the screen */
+        transform: translateX(0);
     }
     100% {
-        transform: translateX(0); /* Stay in the middle */
+        transform: translateX(0); 
     }
 }
-/* General Styling */
+
 body {
-    /* font-family: Arial, sans-serif; */
+    
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Subtle background color */
+    background-color: #ffffff; 
 }
 
-/* Search Section */
+
 .search-section {
     text-align: center;
     margin: 30px auto;
@@ -125,7 +125,7 @@ body {
     color: black;
 }
 
-/* State Item Styling */
+
 .state-item {
     font-size: 18px;
     color: #000;
@@ -133,93 +133,93 @@ body {
     text-align: center; 
     padding: 20px 20px;
     border-radius: 15px;
-    width: 80%; /* Responsive width */
-    max-width: 700px; /* Limit maximum size */
+    width: 80%; 
+    max-width: 700px; 
     text-align: left;
-    height: 250px; /* Increased height for each state div */
+    height: 250px; 
     opacity: 0;
     transform: translateX(0);
     transition: transform 1.5s ease-out, opacity 1.5s ease-out, box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    align-items: center; /* Align items vertically */
-    gap: 15px; /* Spacing between text and image */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Initial shadow */
-    perspective: 1000px; /* Add depth */
-    cursor: pointer; /* Indicate interactivity */
+    flex-direction: row; 
+    align-items: center; 
+    gap: 15px; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+    perspective: 1000px; 
+    cursor: pointer; 
     border: 2px solid rgb(0, 0, 0);
 }
 
 
-/* Specific Hover Colors for Different States */
+
 .state-item[data-state="Madhya Pradesh"]:hover {
-    background-color: #f0da97; /* Yellow for Madhya Pradesh */
+    background-color: #f0da97; 
     font-style: italic;
-    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
-    box-shadow: 0 10px 20px rgba(211, 211, 14, 0.3); /* Deepen shadow on hover */
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); 
+    box-shadow: 0 10px 20px rgba(211, 211, 14, 0.3);
 }
 
 .state-item[data-state="Rajasthan"]:hover {
-    background-color: #ed97f0; /* Yellow for Madhya Pradesh */
+    background-color: #ed97f0; 
     font-style: italic;
-    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
-    box-shadow: 0 10px 20px rgba(191, 14, 211, 0.3); /* Deepen shadow on hover */
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); 
+    box-shadow: 0 10px 20px rgba(191, 14, 211, 0.3);
 }
 
 .state-item[data-state="Kerala"]:hover {
-    background-color: #c2f097; /* Yellow for Madhya Pradesh */
+    background-color: #c2f097; 
     font-style: italic;
-    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
-    box-shadow: 0 10px 20px rgba(14, 211, 47, 0.3); /* Deepen shadow on hover */
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 10px 20px rgba(14, 211, 47, 0.3);
 }
 
 
 .state-item[data-state="Jammu & Kashmir"]:hover {
-    background-color: #f09a97; /* Yellow for Madhya Pradesh */
+    background-color: #f09a97; 
     font-style: italic;
-    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
-    box-shadow: 0 10px 20px rgba(211, 14, 14, 0.3); /* Deepen shadow on hover */
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 10px 20px rgba(211, 14, 14, 0.3); 
 }
 
 .state-item[data-state="West Bengal"]:hover {
-    background-color: #f2a791; /* Yellow for Madhya Pradesh */
+    background-color: #f2a791;
     font-style: italic;
-    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); /* Slight rotation for 3D effect */
-    box-shadow: 0 10px 20px rgba(211, 112, 14, 0.3); /* Deepen shadow on hover */
+    transform: scale(1.05) rotateX(5deg) rotateY(-5deg); 
+    box-shadow: 0 10px 20px rgba(211, 112, 14, 0.3);
 }
 
-/* Image Styling */
+
 .state-item img {
-    width: 50%; /* Image takes up less space */
-    max-width: 500px; /* Limit image size */
+    width: 50%;
+    max-width: 500px;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Shadow for image */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
     margin-left: 100px;
 }
 
-/* State Name Styling */
+
 .state-item span {
     font-size: 22px;
     font-weight: bold;
-    color: #333; /* Darker color for readability */
-    flex: 1; /* Allow text to grow and occupy space */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    color: #333;
+    flex: 1; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
 }
 
 .state-item:hover img {
     transform: scale(1.05);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .state-item {
-        flex-direction: column; /* Stack content vertically on smaller screens */
+        flex-direction: column; 
         text-align: center;
     }
 
     .state-item img {
-        width: 70%; /* Larger image for smaller screens */
+        width: 70%; 
     }
 
     .state-item span {
@@ -227,62 +227,28 @@ body {
     }
 }
 
-/* Different starting points for animation */
+
 .state-item.odd {
-    transform: translateX(-1%); /* Start far left */
+    transform: translateX(-1%); 
 }
 
 .state-item.even {
-    transform: translateX(1%); /* Start far right */
+    transform: translateX(1%);
 }
 
-/* Final positions after animation */
+
 .state-item.visible.odd {
-    transform: translateX(-50%); /* Final position on the left */
+    transform: translateX(-50%); 
     opacity: 1;
 }
 
 .state-item.visible.even {
-    transform: translateX(50%); /* Final position on the right */
+    transform: translateX(50%); 
     opacity: 1;
 }
 
-/* About Us Section
-#about-us {
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding-bottom: 190px;
-  }
-  
-  #about-us h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-decoration: underline;
-  }
-  
-  #about-us p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 15px 0;
-    line-height: 1.6;
-  }
-  
-  #about-us strong {
-    color: #000;
-  }
-  
-  #about-us em {
-    color: #666;
-    font-style: italic;
-  } */
 
-  /* About Us Section */
+  
 #about-us {
     background: linear-gradient(to right, #ffffff, #f3f3f3); 
     padding: 50px;
@@ -298,7 +264,7 @@ body {
     transform: scale(1.02);
 }
 
-/* Heading */
+
 #about-us h2 {
     font-size: 2.8rem;
     color: #2c3e50;
@@ -311,7 +277,7 @@ body {
     padding-bottom: 5px;
 }
 
-/* Paragraphs */
+
 #about-us p {
     font-size: 1.3rem;
     color: #444;
@@ -320,7 +286,7 @@ body {
     font-weight: 400;
 }
 
-/* Emphasized Text */
+
 #about-us strong {
     color: #d35400;
     font-weight: bold;
@@ -331,7 +297,7 @@ body {
     font-style: italic;
 }
 
-/* Decorative Quote Style */
+
 #about-us .quote {
     font-size: 1.5rem;
     font-style: italic;
@@ -343,7 +309,7 @@ body {
     display: inline-block;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     #about-us {
         padding: 30px;
@@ -362,33 +328,76 @@ body {
         font-size: 1.3rem;
     }
 }
- 
-  footer {
-    background-color: #493628;
-    color: white;
-    padding: 20px;
+
+
+footer {
+    background: linear-gradient(135deg, #2c3e50, #1d3f61);
+    color: #ecf0f1; 
+    padding: 30px 20px;
     text-align: center;
-    clear: both; /* Ensure the footer doesn't overlap with previous sections */
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
+
 .footer-contact {
-        max-width: 600px;
-        margin: 0 auto;
-    }
+    max-width: 700px;
+    margin: 0 auto;
+}
 
- .footer-contact h3 {
-        font-size: 30px;
-        text-decoration: underline;
-        padding-bottom: 20px;
-        color:#FCE7C8;
 
-    }
+.footer-contact h3 {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #f1c40f; 
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
 
 .footer-contact p {
-        font-size: 20px;
-        /* color:#E78F81; */
+    font-size: 1.1rem;
+    color: #dfe6e9;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
 
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e74c3c; 
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
+
+
+@media (max-width: 768px) {
+    .footer-contact h3 {
+        font-size: 1.8rem;
     }
+
+    .footer-contact p {
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 20px 15px;
+    }
+}
+
 
 .contact-form {
         display: flex;
@@ -432,7 +441,7 @@ footer label {
     }
 
 
-/* Ribbon Layer */
+
 .ribbon-layer.even {
     position: absolute;
     overflow: auto;
@@ -441,10 +450,9 @@ footer label {
     left: 100%;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #f2efef, #ec9584da,#f2efef); /* Background color */
-    transform: translateX(-100%);
-    z-index: -1; /* makes the ribbon behind */
-    transition: width 0.3s ease, transform 0.3s ease;/*transforming*/
+    background: linear-gradient(90deg, #f2efef, #ec9584da,#f2efef);
+    
+    transition: width 0.3s ease, transform 0.3s ease;
     border-radius: 8px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -457,31 +465,30 @@ footer label {
     right: 100%;
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #f2efef, #6cfffd,#f2efef); /* Background color */
+    background: linear-gradient(90deg, #f2efef, #6cfffd,#f2efef); 
     transform: translateX(100%);
-    z-index: -1; /* makes the ribbon behind */
-    transition: width 0.3s ease, transform 0.3s ease;/*transforming*/
+    z-index: -1; 
+    transition: width 0.3s ease, transform 0.3s ease;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     overflow-x: auto;
     direction: inherit;
 }
 
-/* Styling the container box */
+
 #imageContainer {
     display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping to the next line */
-    overflow-x: auto; /* Enables horizontal scrolling if content overflows */
-    border: 2px solid #000000; /* Box border */
+    flex-wrap: nowrap; 
+    border: 2px solid #000000;
     padding: 10px;
-    gap: 15px; /* Space between images */
-    background-color: #f8f8f8; /* Light background */
+    gap: 15px; 
+    background-color: #f8f8f8; 
     white-space: nowrap;
-    width: 100%; /* Adjust as needed */
+    width: 100%; 
     margin: auto;
 }
 
-/* Individual image item */
+
 .image-item {
     flex-direction: row;
     align-items: center;
@@ -490,9 +497,9 @@ footer label {
     padding-top: 15px;
 }
 
-/* Image styling */
+
 .image-item img {
-    width: 250px; /* Adjust size as needed */
+    width: 250px; 
     height: auto;
     padding: 12px 12px;
     margin-bottom: 20px;
@@ -507,12 +514,9 @@ footer label {
 .image-item img:hover {
     filter: grayscale(0%);
     transform: scale(1.05);
-    border: 3px solid #560404; /* Light blue border */
+    border: 3px solid #560404; 
 }
 
-
-
-/* Image name styling */
 .image-item span {
     font-size: 20px;
     font-weight: bold;
@@ -522,9 +526,14 @@ footer label {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
 }
 
-/* Hover Effect for Text: Color Change, Lift & Size Increase */
+
 .image-item:hover span {
     color: #560404;
-    font-size: 24px; /* Slightly bigger text */
+    font-size: 24px;
     animation: 0.6s ease-in-out infinite alternate;
-}
+} 
+
+
+
+
+ 
