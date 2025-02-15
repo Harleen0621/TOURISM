@@ -14,6 +14,7 @@
             height: 100vh;
             background-color: #f3f4f6;
             margin: 0;
+            background: linear-gradient(135deg, #bdc3c7, #2c3e50);
         }
         .form-container {
             padding: 30px;
@@ -23,6 +24,8 @@
             background-color: #ffffff;
             border-radius: 10px;
             text-align: center;
+            border:solid black 2px;
+            border-top:5px solid rgb(48, 48, 104);
         }
         h2 {
             text-align: center;
@@ -47,13 +50,16 @@
         input[type="submit"] {
             width: 100%; /* Makes buttons responsive */
             max-width: 400px; /* Prevents them from getting too wide */
-            background-color:#28a745;
+            /* background-color:#28a745; */
+            background: linear-gradient(135deg, #2b5876, #4e4376);
             color: white;
             border: none;
             cursor: pointer;
         }
         input[type="submit"]:hover {
-            background-color: rgb(54, 102, 94);
+            /* background-color: rgb(54, 102, 94); */
+            background: linear-gradient(135deg, #4e4376,#2b5876);
+            transform: scale(1.05);
         }
         .forgot-link {
             display: block;
@@ -94,7 +100,8 @@
             max-width: 400px; /* Prevents them from getting too wide */
             padding: 10px;
             margin-top: 15px;
-            background-color: rgb(19, 145, 122);
+            /* background-color: rgb(19, 145, 122); */
+            background: linear-gradient(135deg, #ffd89b,#19547b);
             color: white;
             border: none;
             cursor: pointer;
@@ -103,7 +110,9 @@
             font-size: 17px;
         }
         .go-home-btn:hover {
-            background-color: rgb(54, 102, 94);
+            /* background-color: rgb(54, 102, 94); */
+            background: linear-gradient(135deg,#19547b,#ffd89b);
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -131,35 +140,8 @@
 </div>
 
 <script>
-    // document.getElementById("loginForm").addEventListener("submit", async function(event) {
-    //     event.preventDefault();
 
-    //     const identifier = document.getElementById("identifier").value.trim();
-    //     const password = document.getElementById("password").value.trim();
-
-    //     const backendUrl = "http://localhost:5000/api/users/login"; // Adjust for your backend VM IP
-
-    //     const response = await fetch(backendUrl, {
-    //         method: "POST",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify({ identifier, password })
-    //     });
-
-    //     const data = await response.json();
-        
-
-
-    //     if (data.redirect) {
-    //         document.getElementById("dontexists").style.display = "none";
-    //         document.getElementById("successMessage").style.display = "block";
-    //         setTimeout(() => { window.location.href = "/dashboard.html"; }, 2000);
-    //     } else {
-    //         document.getElementById("successMessage").style.display = "none";
-    //         document.getElementById("dontexists").style.display = "block";
-    //         setTimeout(() => { window.location.href = "/register.html"; }, 2000);
-    //     }
-    // });
-    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+document.getElementById("loginForm").addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const identifier = document.getElementById("identifier").value.trim();
@@ -192,8 +174,33 @@
     }
 });
 
+    // document.getElementById("loginForm").addEventListener("submit", async function(event) {
+    //     event.preventDefault();
+
+    //     const identifier = document.getElementById("identifier").value.trim();
+    //     const password = document.getElementById("password").value.trim();
+
+    //     const backendUrl = "http://localhost:5000/api/users/login"; // Adjust for your backend VM IP
+
+    //     const response = await fetch(backendUrl, {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({ identifier, password })
+    //     });
+
+    //     const data = await response.json();
+
+    //     if (data.redirect) {
+    //         document.getElementById("dontexists").style.display = "none";
+    //         document.getElementById("successMessage").style.display = "block";
+    //         setTimeout(() => { window.location.href = "/dashboard.html"; }, 2000);
+    //     } else {
+    //         document.getElementById("successMessage").style.display = "none";
+    //         document.getElementById("dontexists").style.display = "block";
+    //         setTimeout(() => { window.location.href = "/register.html"; }, 2000);
+    //     }
+    // });
 </script>
 
 </body>
 </html>
-

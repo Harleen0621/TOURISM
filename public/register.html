@@ -14,6 +14,8 @@
             padding-top: 25px;
             padding-bottom: 25px;
             margin: 0;
+            background: linear-gradient(135deg, #ddd6f3, #faaca8);
+            
         }
         .form-container {
             padding: 30px;
@@ -23,6 +25,8 @@
             background-color: #ffffff;
             border-radius: 10px;
             text-align: center;
+            border:solid black 2px;
+            border-top:5px solid rgb(48, 48, 104);
         }
         h2 {
             margin-bottom: 20px;
@@ -46,7 +50,9 @@
         input[type="submit"] {
             width: 100%; /* Makes buttons responsive */
             max-width: 400px; /* Prevents them from getting too wide */
-            background-color: #28a745;
+            /* background-color: #28a745; */
+            background: linear-gradient(135deg, #c33764, #1d2671);
+            
             color: white;
             border: none;
             cursor: pointer;
@@ -54,7 +60,9 @@
             font-size: 17px;
         }
         input[type="submit"]:hover {
-            background-color: #218838;
+            /* background-color: #218838; */
+            background: linear-gradient(135deg, #1d2671,#c33764);
+            transform: scale(1.05);
         }
         .password-requirements {
             font-size: 12px;
@@ -111,7 +119,9 @@
             max-width: 400px; /* Prevents them from getting too wide */
             padding: 10px;
             margin-top: 15px;
-            background-color: rgb(19, 145, 122);
+            /* background-color: rgb(19, 145, 122); */
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            
             color: white;
             border: none;
             cursor: pointer;
@@ -120,7 +130,9 @@
             font-size: 17px;
         }
         .go-home-btn:hover {
-            background-color: rgb(54, 102, 94);
+            /* background-color: rgb(54, 102, 94); */
+            background: linear-gradient(135deg, #185a9d,#43cea2);
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -128,7 +140,7 @@
 
 <div class="form-container">
     <h2>User Registration</h2>
-    <div class="success-message" id="successMessage">User registered successfully! Redirecting to Home Page...</div>
+    <div class="success-message" id="successMessage">User registered successfully! Redirecting...</div>
     <div class="already-user" id="alreadyexists">User Already Exists! Redirecting to Home Page...</div>
 
     <form id="registerForm">
